@@ -1,0 +1,33 @@
+
+#login-form-container {
+  background-color: #F5F5F5;
+  margin: auto;
+  margin-top: 10%;
+  padding: 30px;
+  width: 30rem;
+  height: 20rem;
+  border-radius: 20px;
+}
+
+
+#pw-eye {
+  right: 10px;
+  top: 55%;
+  cursor: pointer;
+}
+
+
+/* Styles for small devices (portrait tablets and large phones) */
+@media (max-width: 768px) {
+
+}
+
+/* Styles for extra small devices (phones) */
+@media (max-width: 480px) {
+  #login-form-container {
+    width: 20rem;
+  }
+}
+
+
+

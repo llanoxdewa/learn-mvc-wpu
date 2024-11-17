@@ -1,0 +1,14 @@
+
+#list-mahasiswa {
+  width: 50vw;
+}
+
+.list-group-item:hover {
+  background-color: darkgray;
+}
+
+#searchbar {
+  width: 300px;
+}
+
+

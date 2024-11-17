@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Andi Saputra",
+        "nim": "A12345",
+        "age": 20,
+        "major": "Computer Science",
+        "email": "andi.s@gmail.com"
+    },
+    {
+        "name": "Budi Santoso",
+        "nim": "B12346",
+        "age": 21,
+        "major": "Mathematics",
+        "email": "budi.s@gmail.com"
+    },
+    {
+        "name": "Citra Dewi",
+        "nim": "C12347",
+        "age": 22,
+        "major": "Physics",
+        "email": "citra.d@gmail.com"
+    },
+    {
+        "name": "Dina Anggraini",
+        "nim": "D12348",
+        "age": 23,
+        "major": "Chemistry",
+        "email": "dina.a@gmail.com"
+    },
+    {
+        "name": "Eko Pratama",
+        "nim": "E12349",
+        "age": 24,
+        "major": "Biology",
+        "email": "eko.p@gmail.com"
+    },
+    {
+        "name": "Fajar Maulana",
+        "nim": "F12350",
+        "age": 25,
+        "major": "Engineering",
+        "email": "fajar.m@gmail.com"
+    },
+    {
+        "name": "Gita Maharani",
+        "nim": "G12351",
+        "age": 26,
+        "major": "Accounting",
+        "email": "gita.m@gmail.com"
+    },
+    {
+        "name": "Hadi Supriyadi",
+        "nim": "H12352",
+        "age": 27,
+        "major": "Law",
+        "email": "hadi.s@gmail.com"
+    },
+    {
+        "name": "Indah Lestari",
+        "nim": "I12353",
+        "age": 28,
+        "major": "Psychology",
+        "email": "indah.l@gmail.com"
+    },
+    {
+        "name": "Joko Riyanto",
+        "nim": "J12354",
+        "age": 29,
+        "major": "Sociology",
+        "email": "joko.r@gmail.com"
+    }
+]
