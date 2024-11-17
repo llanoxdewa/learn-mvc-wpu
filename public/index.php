@@ -38,6 +38,8 @@ $router->post('/login/handler',Login::render(),'loginHandler');
 
 
 
+
+// start the routing 
 $router->start();
 
 
