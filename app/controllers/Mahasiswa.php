@@ -80,26 +80,26 @@ private static array $detailPayload = [
   }
 
   public function addMahasiswaHandler(){
-      $validates = new MahasiswaFormValidation(); 
+      $validator = new MahasiswaFormValidation(); 
 
 
 
-      $name   = $validates->get_validate_value('name');
-      $nim    = $validates->get_validate_value('nim');
-      $email  = $validates->get_validate_value('email');
-      $age    = $validates->get_value('age');
-      $major  = $validates->get_value('major');
+      $name   = $validator->get_validate_value('name');
+      $nim    = $validator->get_validate_value('nim');
+      $email  = $validator->get_validate_value('email');
+      $age    = $validator->get_value('age');
+      $major  = $validator->get_value('major');
 
 
-      if(!$validates->valid_all()){
-        foreach($validates->get_invalid_messages() as $invalid_message)
+      if(!$validator->valid_all()){
+        foreach($validator->get_invalid_messages() as $invalid_message)
           FlashMessage::set_message($invalid_message,FlashMessage::FLASH_ERROR);
       };
       
       
       
       // database process 
-      if($validates->valid_all()){
+      if($validator->valid_all()){
         FlashMessage::set_message("Mahasiswa $name berhasil ditambahkan ✔");
         M_Mahasiswa::insert(
           name  : $name,
@@ -130,28 +130,28 @@ private static array $detailPayload = [
       if($callback_url === null)
         $callback_url = self::$url_mahasiswa;
 
-      $validates = new MahasiswaFormValidation(); 
+      $validator = new MahasiswaFormValidation(); 
 
 
-      $validates->disableUniqValidation('name');  
-      $validates->disableUniqValidation('nim');  
+      $validator->disableUniqValidation('name');  
+      $validator->disableUniqValidation('nim');  
 
       $id     = $params['id'];
-      $name   = $validates->get_validate_value('name');
-      $nim    = $validates->get_validate_value('nim');
-      $email  = $validates->get_validate_value('email');
-      $age    = $validates->get_value('age');
-      $major  = $validates->get_value('major');
+      $name   = $validator->get_validate_value('name');
+      $nim    = $validator->get_validate_value('nim');
+      $email  = $validator->get_validate_value('email');
+      $age    = $validator->get_value('age');
+      $major  = $validator->get_value('major');
 
-      if(!$validates->valid_all()){
-        foreach($validates->get_invalid_messages() as $invalid_message)
+      if(!$validator->valid_all()){
+        foreach($validator->get_invalid_messages() as $invalid_message)
           FlashMessage::set_message($invalid_message,FlashMessage::FLASH_ERROR);
       };
       
       
       
       // database process 
-      if($validates->valid_all()){
+      if($validator->valid_all()){
         FlashMessage::set_message("Mahasiswa $name berhasil di update ✔");
         M_Mahasiswa::update(
           id    : $id,

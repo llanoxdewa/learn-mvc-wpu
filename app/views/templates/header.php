@@ -38,6 +38,10 @@
             <a class="nav-link" href="/login">Login</a>
           <?php endif; ?>
         </li>
+        <span style="display: flex;align-items: center;">/</span>
+       <li class="nav-item">
+          <a class="nav-link" href="/signup">Signup</a>
+        </li>
       </ul>
     </div>
   </div>

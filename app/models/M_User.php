@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\Model;
 
-
 class M_User extends Model {
 
   protected static string $model = __CLASS__; 
@@ -29,6 +28,15 @@ class M_User extends Model {
       return null;
     }
   }
+
+  public static function create(string $username,string $password, string $email){
+    $password = self::storePassword($password); 
+    self::mutate("
+      INSERT INTO Users 
+      (username,password,email) values
+      (?,?,?)
+    ",[$username,$password,$email]);    
+  } 
 
 
 

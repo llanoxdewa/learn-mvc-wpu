@@ -29,7 +29,6 @@ class Login extends Controller {
       // cek for cookie
       if(isset($_COOKIE[Constants::LOGIN_COOKIE_KEY])){
         $_SESSION[Constants::LOGIN_SESSION_KEY] = $_COOKIE[Constants::LOGIN_COOKIE_KEY];
-        var_dump('all good');
       } else 
         Helper::redirect(Constants::ROOT_PATH);
     } 
@@ -58,20 +57,20 @@ class Login extends Controller {
   } 
 
   public function loginHandler(){
-    $username = filter_input(INPUT_POST,'username',FILTER_SANITIZE_SPECIAL_CHARS); 
-    $password = filter_input(INPUT_POST,'password',FILTER_SANITIZE_SPECIAL_CHARS); 
+    $username   = filter_input(INPUT_POST,'username',FILTER_SANITIZE_SPECIAL_CHARS); 
+    $password   = filter_input(INPUT_POST,'password',FILTER_SANITIZE_SPECIAL_CHARS); 
     $save_login = filter_input(INPUT_POST,'remember-me',FILTER_SANITIZE_SPECIAL_CHARS); 
 
 
     $mhs = M_User::getUserBy('username',$username); 
 
     if($mhs){
-      $real_password = $mhs->password;
-      if($password === $real_password){
+      $valid_password = $mhs->password;
+      if(password_verify($password,$valid_password)){
         
         $user_data = json_encode([
           'username' => $mhs->username,  
-          'email' => $mhs->email  
+          'email'    => $mhs->email  
         ]); 
         
         $encrypted_user_data = Helper::encryptData($user_data,Constants::ENCRYPTION_KEY);
@@ -84,7 +83,7 @@ class Login extends Controller {
 
         Helper::redirect(Helper::join_path(Constants::ROOT_PATH,'mahasiswa'));
       }
-      FlashMessage::set_message('password salah !!!');
+      FlashMessage::set_message('password salah !!!',FlashMessage::FLASH_ERROR);
       Helper::redirect(Helper::join_path(Constants::ROOT_PATH,'login'),FlashMessage::FLASH_ERROR);
     }
     

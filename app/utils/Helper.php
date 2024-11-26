@@ -31,6 +31,13 @@ class Helper {
       return openssl_decrypt($encrypted, Constants::ENCRYPTION_METHOD, $key, 0, $iv);
   }
 
+  
+  // login and etc
+  //public static function hashPassword(string $password){
+    //$hashed_password = password_hash($password,PASSWORD_BCRYPT);  
+    //return $hashed_password;
+  //} 
+
 };
 
 

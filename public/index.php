@@ -13,6 +13,7 @@ use App\Controllers\Home;
 use App\Controllers\About;
 use App\Controllers\Login;
 use App\Controllers\Mahasiswa;
+use App\Controllers\Signup;
 
 $router = new Router();
 
@@ -36,6 +37,9 @@ $router->get('/logout',Login::render(),'logout');
 $router->post('/login/handler',Login::render(),'loginHandler');
 
 
+// singup route handler
+$router->get('/signup',Signup::render());
+$router->post('/signup',Signup::render(),'signupHandler');
 
 
 
